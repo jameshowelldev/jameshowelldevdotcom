@@ -1,150 +1,128 @@
-import * as React from "react"
+import React from 'react';
+import Section, { SectionContent } from '@components/Section/Section';
+import Intro from '@components/Intro/Intro';
+import styled from 'styled-components';
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
+const SectionsWrapperStyles = styled.div`
+  counter-reset: item;
+`;
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
-
-// markup
-const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
+const IndexPage = () => (
+  <>
+    <Intro>
+      <h2>Hi, my name is</h2>
+      <h1>James Howell</h1>
+      <h3>
+        I make The Internet* <span>(well some of it)</span>
+      </h3>
+      <p>
+        I'm a front-end web developer based in London with over a decade of
+        experience in the advertising, marketing and banking industries.
       </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+      <p>I love building beautiful interfaces for web apps and websites.</p>
+    </Intro>
+    <SectionsWrapperStyles>
+      <Section id="about" title="About Me">
+        <p>
+          I've been building websites since you were in short trousers (around
+          2007 to be exact) and a lot has changed on the Web in that time.
+          Luckily for you, I've changed with it and have moved on from
+          Macromedia Dreamweaver to Visual Studio Code (with quite a few other
+          editors used along the way!) My Classic ASP skills aren't what they
+          were but in their place are new skills in Angular, React and Node.
+        </p>
+        <p>
+          I love to learn but most of all I love building beautiful, performant
+          interfaces and user-experiences which everyone can use.
+        </p>
+        <p>
+          I'm also a big fan of productivity tools so will spend time
+          customising my editor, Alfred workflows, Terminal and keyboard
+          shortcuts to get things done as efficiently as possible.
+        </p>
+        <p>Below are a few skills I've been picking up recently:</p>
+      </Section>
+      <Section id="experience" title="My Experience">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae,
+          iste maxime. Veritatis nisi, nulla deleniti quaerat commodi assumenda!
+          Possimus aliquam labore quaerat blanditiis hic deleniti ab, rem
+          incidunt mollitia at.
+        </p>
+      </Section>
+      <Section id="recommendations" title="My Recommendations / Things I Use">
+        <h2>Hardware</h2>
+        <SectionContent>
+          <h3>Dev Machine</h3>
+          <p>
+            My personal machine is a 2015 iMac Retina 5K 3.2 Ghz Quad-Core i5 with
+            32Gb RAM
+          </p>
+        </SectionContent>
+        <SectionContent>
+          <h3>Monitor</h3>
+          <p>
+            As a second screen I've got a Dell P2715Q 27-Inch Ultra HD 4K LCD
+            Monitor
+          </p>
+        </SectionContent>
+        <h2>Dev Software</h2>
+        <SectionContent>
+          <h3>Code Editor</h3>
+          <p>
+            I've been using <a href="#">Visual Studio Code</a> for professional and personal
+            projects since 2018. I've got a stack of extensions installed but here
+            are some of my faves and what's cool about them:
+          </p>
+          <ul>
+            <li><a href="#">Git Lens</a> - A vital extension if, like me, you work in a large team with lots of developers touching the same files. Git Lens adds a wealth of data from your repository into your editor showing the history of files, commits and even specific lines within files. You can also have a snoop around for who to blame when things go wrong, although I wouldn't encourage that!</li>
+            <li><a href="#">Auto Rename Tag</a> - Ever converted a `span` into a `div` and then realised you forgot to change the closing tag? If so Auto Rename Tag will get you out of jail as it adds the ability to synchronise the editing of both tags at the same time.</li>
+            <li><a href="#">Auto Close Tag</a> - Does exactly what you'd expect it would. But if you consider how often a developer needs to close a tag having this be automatic is a godsend.</li>
+            <li><a href="#">Bracket Pair Colorizer</a> - A useful extension which colour codes opening and closing brackets which is especially useful in complex Javascript files.</li>
+          </ul>
+        </SectionContent>
+        <SectionContent>
+          <h3>Terminal</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, nobis
+            quos. Facere ex unde impedit perferendis amet tempora dolorum
+            praesentium, facilis ratione blanditiis distinctio culpa accusantium
+            necessitatibus, soluta illo error.
+          </p>
+        </SectionContent>
+        <h2>Desktop Apps</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+          repellat obcaecati alias, repudiandae non minus quam animi quod unde
+          porro nostrum deserunt quas sunt deleniti magni et. Ipsam, dicta
+          porro?
+        </p>
+        <h2>Other gear</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+          repudiandae nulla animi sed eum, alias aut esse porro ducimus aperiam
+          expedita ea neque autem dolorem perferendis tempore labore eligendi
+          nemo.
+        </p>
+      </Section>
+      <Section id="blog" title="Blog">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non iure
+          excepturi ex vel saepe, sequi suscipit perspiciatis illo itaque
+          tempore sunt, eius consequatur. Debitis assumenda natus perferendis
+          omnis ab eaque!
+        </p>
+      </Section>
+      <Section id="contact" title="Contact Me">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
+          temporibus quia numquam ut fugit earum nesciunt reprehenderit fuga
+          dolores, illum commodi blanditiis eaque sunt eum, excepturi repellat
+          provident, a cumque.
+        </p>
+      </Section>
+    </SectionsWrapperStyles>
+  </>
+);
 
-export default IndexPage
+export default IndexPage;

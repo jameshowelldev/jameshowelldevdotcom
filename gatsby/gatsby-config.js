@@ -1,36 +1,63 @@
 module.exports = {
   siteMetadata: {
-    title: "jameshowell",
+    title: 'jameshowell.dev',
   },
   plugins: [
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        dataset: "production",
-        projectId: "vext4fvn",
+        projectId: 'vext4fvn',
+        dataset: 'production',
       },
     },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-mdx',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: "./src/images/",
+        icon: 'src/images/icon.png',
       },
-      __key: "images",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        rule: {
+          include: /\.inline\.svg$/,
+        },
       },
-      __key: "pages",
+    },
+    'gatsby-plugin-mdx',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: './src/pages/',
+      },
+      __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-plugin-alias-imports',
+      options: {
+        alias: {
+          '@components': './src/components',
+          '@fonts': './src/fonts',
+          '@styles': './src/styles',
+          '@pages': './src/pages',
+          '@images': './src/images',
+        },
+        extensions: ['js'],
+      },
     },
   ],
 };

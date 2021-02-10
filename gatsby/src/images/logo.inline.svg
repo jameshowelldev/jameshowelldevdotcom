@@ -1,0 +1,7 @@
+<svg id="Component_1_1" data-name="Component 1 – 1" xmlns="http://www.w3.org/2000/svg" width="817.23" height="786.484" viewBox="0 0 817.23 786.484">
+  <text id="JH" transform="translate(219.115 159)" fill="#64ffda" font-size="400" font-family="PTSans-Regular, PT Sans"><tspan x="0" y="360">JH</tspan></text>
+  <g id="Polygon_1" data-name="Polygon 1" transform="translate(272.5) rotate(30)" fill="none">
+    <path d="M471.75,0,629,272.5,471.75,545H157.25L0,272.5,157.25,0Z" stroke="none"/>
+    <path d="M 167.6449279785156 18 L 20.78204345703125 272.5 L 167.6449279785156 527 L 461.3551025390625 527 L 608.2178955078125 272.5 L 461.3551025390625 18 L 167.6449279785156 18 M 157.25 0 L 471.75 0 L 629 272.5 L 471.75 545 L 157.25 545 L 0 272.5 L 157.25 0 Z" stroke="none" fill="#64ffda"/>
+  </g>
+</svg>
